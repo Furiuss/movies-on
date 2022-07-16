@@ -18,7 +18,6 @@ function Movie() {
   const [movie, setMovie] = useState(null)
 
   const getMovie = async(url) => {
-
     const res = await fetch(url)
     const data = await res.json()
 
@@ -33,7 +32,7 @@ function Movie() {
   }
 
   useEffect(() => {
-    const movieUrl = `${moviesUrl}${id}?${apiKey}`
+    const movieUrl = `${moviesUrl}${id}?${apiKey}&language=pt-BR`
     getMovie(movieUrl)
   }, [])
 
